@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PlanetService } from '../services/planet.service';
 import { Planet } from '../models/planet';
 import { Observable, Observer } from 'rxjs';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-planets',

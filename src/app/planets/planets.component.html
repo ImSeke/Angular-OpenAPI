@@ -1,18 +1,22 @@
-<div *ngIf="planets != null;">
-    <table mat-table [dataSource]="(planets | async)?.results">
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Name</th>
-            <td mat-cell *matCellDef="let planet"> {{ planet.name }} </td>
-        </ng-container>
+<app-planet-search></app-planet-search>
 
-        <ng-container matColumnDef="climate">
-            <th mat-header-cell *matHeaderCellDef>Climate</th>
-            <td mat-cell *matCellDef="let planet"> {{ planet.climate }} </td>
-        </ng-container>
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>All planets</span>
+    </mat-toolbar-row>
+</mat-toolbar>
 
-        <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
-        <tr mat-row *matRowDef="let row; columns: columndefs;"></tr>
-    </table>
-</div>
+<table mat-table [dataSource]="(planets | async)?.results">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let planet"> {{ planet.name }} </td>
+    </ng-container>
 
-    
+    <ng-container matColumnDef="climate">
+        <th mat-header-cell *matHeaderCellDef>Climate</th>
+        <td mat-cell *matCellDef="let planet"> {{ planet.climate }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+    <tr mat-row *matRowDef="let row; columns: columndefs;"></tr>
+</table>

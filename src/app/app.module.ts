@@ -12,13 +12,19 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import { PeopleComponent } from './people/people.component';
 import { StarshipsComponent } from './starships/starships.component';
+import {MatInputModule} from '@angular/material/input';
+import { PlanetSearchComponent } from './planet-search/planet-search.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanetsComponent,
     PeopleComponent,
-    StarshipsComponent
+    StarshipsComponent,
+    PlanetSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +36,8 @@ import { StarshipsComponent } from './starships/starships.component';
     MatProgressSpinnerModule,
     MatButtonToggleModule,
     MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

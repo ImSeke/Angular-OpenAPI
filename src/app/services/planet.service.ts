@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 
 import { Planet } from '../models/planet';
 
@@ -15,5 +15,13 @@ export class PlanetService {
 
   getPlanets(): Observable<any> {
     return this.http.get<any>(this.planetsUrl)
+  }
+
+  searchPlanets(p:string): Observable<any> {
+    if (!p.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<any>(`${this.planetsUrl}/?search=${p}`)
   }
 }
